@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Edit Item</title>
+</head>
+<body>
+<h1>Edit Item</h1>
+<form th:action="@{/items/edit/{id}(id=${item.id})}" th:object="${item}" method="post" enctype="multipart/form-data">
+  Name: <input type="text" th:field="*{name}" /><br/>
+  Price: <input type="number" th:field="*{price}" /><br/>
+  Category: <input type="text" th:field="*{category}" /><br/>
+
+  <!-- Display current image if it exists -->
+  <div th:if="${item.imageBase64 != null}">
+    <label>Current Image:</label><br/>
+    <img th:src="'data:image/jpeg;base64,' + ${item.imageBase64}" alt="Current Image" width="100" /><br/>
+  </div>
+
+  <!-- Allow user to upload a new image -->
+  <label>Upload New Image:</label><br/>
+  <input type="file" name="image" /><br/>
+
+  <button type="submit">Update</button>
+</form>
+</body>
+</html>

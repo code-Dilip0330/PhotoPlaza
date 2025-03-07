@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Photos</title>
+    <link rel="stylesheet" th:href="@{css/photographer/manageProduct.css}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+</head>
+<body>
+<div th:fragment="content" class="container">
+    <header>
+        <h1>Manage Photos</h1>
+        <div class="search-sort">
+            <input type="text" id="search" placeholder="Search photos...">
+            <button id="sortBtn"><i class="fas fa-sort"></i> Sort</button>
+            <a th:href="@{/photographer/manageProduct/product}" class="add-photo-btn">
+                <i class="fas fa-plus"></i>
+                <span>Add Product</span>
+            </a>
+        </div>
+    </header>
+
+    <main>
+<!--        <div class="sidebar" id="sidebar">-->
+<!--            <h2>Filters</h2>-->
+<!--            <div class="filter-group">-->
+<!--                <label for="categoryFilter">Category:</label>-->
+<!--                <input type="text" id="categoryFilter" placeholder="Filter by category">-->
+<!--            </div>-->
+<!--            <div class="filter-group">-->
+<!--                <label for="dateFilter">Date:</label>-->
+<!--                <input type="date" id="dateFilter">-->
+<!--            </div>-->
+<!--            <div class="filter-group">-->
+<!--                <label for="priceRange">Price Range:</label>-->
+<!--                <input type="range" id="priceRange" min="0" max="100" step="1" value="50">-->
+<!--                <span id="priceValue">$50</span>-->
+<!--            </div>-->
+<!--            <button id="applyFilters">Apply Filters</button>-->
+<!--        </div>-->
+
+        <div class="table-container">
+            <table id="photoTable">
+                <thead>
+                <tr>
+                    <th>S.N</th>
+                    <th>Preview</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>uploadDate</th>
+                    <th>Keywords</th>
+                    <th colspan="2" style="text-align:center;">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="product, productStat : ${products}">
+                    <td th:text="${productStat.count}"></td>
+                    <td>
+                        <img    th:if="${product.imageBase64 != null}"
+                                th:src="'data:image/jpeg;base64,' + ${product.imageBase64}"
+                                alt="Product Image" width="100" height="100" >
+                    </td>
+                    <td th:text="${product.title}"></td>
+                    <td th:text="${product.description}"></td>
+                    <td th:text="${product.category}"></td>
+                    <td th:text="${product.price}"></td>
+                    <td th:text="${product.uploadDate}"></td>
+                    <td th:text="${product.keywords}"></td>
+                    <td >
+                        <a th:href="@{/photographer/edit/{id}(id=${product.id})}" class="edit">Edit</a>
+                    </td>
+                    <td>
+                        <a th:href="@{/photographer/delete/{id}(id=${product.id})}"
+                           class="delete"
+                           th:data-confirm-delete="|Are you sure you want to delete '${product.title}'|"
+                           onclick="if(!confirm(this .getAttribute('data-confirm-delete'))) return false"
+                        >Delete</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <div class="pagination">
+            <button id="prevPage">Previous</button>
+            <span id="currentPage">Page 1 of 5</span>
+            <button id="nextPage">Next</button>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
+<!--    <div id="detailsPanel" class="details-panel">
+        <div class="details-content">
+            <h2 id="detailsTitle"></h2>
+            <p id="detailsCategory"></p>
+            <p id="detailsPrice"></p>
+            <p id="detailsTags"></p>
+            <p id="detailsUploadDate"></p>
+<div class="details-actions">
+    <button id="editBtn">Edit</button>
+    <button id="deleteBtn">Delete</button>
+</div>
+<button id="closeDetails">&times;</button>
+</div>
+</div>-->
+

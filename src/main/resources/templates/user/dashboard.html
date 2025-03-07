@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Navbar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--navbar-->
+    <link rel="stylesheet" th:href="@{/users/navbar.css}">
+    <script type="text/javascript" th:src="@{/users/navbar.js}" defer></script>
+    <link rel="stylesheet" th:href="@{/users/profileDetails.css}">
+    <script type="text/javascript" th:src="@{/js/photographer/addProduct.js}" defer></script>
+    <!--    profile-->
+    <!--    <link rel="stylesheet" th:href="@{/css/common/register.css}">-->
+    <!--    missionary-->
+    <link rel="stylesheet" th:href="@{/users/missionary.css}">
+    <script th:src="@{/users/missionary.js}" defer type="text/javascript"></script>
+    <!--    footer links-->
+    <link rel="stylesheet" th:href="@{/css/common/footer.css}">
+</head>
+<body>
+<!-- Navbar-->
+<header class="navbar">
+    <div th:replace="user/navbar :: navbar"></div>
+</header>
+<div class="contentBody">
+    <div th:if="${section == 'profileDetails'}">
+        <div  th:replace="auth/ProfileDetails :: content" ></div>
+        <!--        <link rel="stylesheet" th:href="@{/css/common/login.css}">-->
+        <!--        <script type="text/javascript" th:src="@{/js/common/login.js}" defer></script>-->
+    </div>
+<!--    <div th:if="${section == 'searchResults'}">-->
+<!--        <div  th:replace="user/searchResult :: content" ></div>-->
+<!--        <link rel="stylesheet" th:href="@{/users/missionary.css}">-->
+<!--        <script th:src="@{/users/missionary.js}" defer type="text/javascript"></script>-->
+<!--    </div>-->
+</div>
+
+<section id="gallery">
+    <!-- Search Results Section -->
+<!--    <div th:if="${not searchResults.empty}">-->
+<!--        <h2>Search Results for '[[${keyword}]]'</h2>-->
+<!--        <section id="searchGallery">-->
+<!--            <div class="grid">-->
+<!--                <div th:each="product : ${searchResults}" class="grid-item">-->
+<!--                    <img th:src="'data:image/jpeg;base64,' + ${product.imageBase64}"-->
+<!--                         th:data-title="${product.title}"-->
+<!--                         th:data-description="${product.description}"-->
+<!--                         th:data-price="${product.price}"-->
+<!--                         alt="Product Image" />-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </section>-->
+<!--    </div>-->
+    <!-- Masonry Grid -->
+    <div class="grid">
+        <div th:each="product : ${products}" class="grid-item">
+            <img th:src="'data:image/jpeg;base64,' + ${product.imageBase64}"
+                 th:data-title="${product.title}"
+                 th:data-description="${product.description}"
+                 th:data-price="${product.price}"
+                 alt="Product Image" />
+        </div>
+    </div>
+</section>
+<!-- Modal for Larger Image -->
+<div id="imageModal" class="modal">
+
+    <div class="product_card">
+        <span class="close">&times;</span>
+        <img src="" class="big_img" alt="" id="modalImage">
+        <div class="product_details">
+            <div class="row1">
+                <h1 id="modalTitle"></h1>
+            </div>
+            <div class="photographer_details">
+                <img src=""
+                        class="profile_img"
+                        alt="profileImg"
+                        id="modalPhotographerImage">
+                <h4
+                        id="modalPhotographerName">
+                </h4>
+            </div>
+            <div class="description">
+                <span id="modalDescription"></span>
+            </div>
+            <div class="row2">
+                <div class="price"><span id="modalPrice"></span></div>
+            </div>
+            <button>Download</button>
+        </div>
+    </div>
+</div>
+<!--&lt;!&ndash; Modal for Larger Image &ndash;&gt;-->
+<!--<div id="imageModal" class="modal">-->
+<!--    <span class="close">&times;</span>-->
+<!--    <img class="modal-content" id="modalImage" />-->
+<!--    <div class="modal-details">-->
+<!--        <h2 id="modalTitle"></h2>-->
+<!--        <p id="modalDescription"></p>-->
+<!--        <p id="modalPrice"></p>-->
+<!--    </div>-->
+<!--</div>-->
+<!-- Footer -->
+<footer class="footer">
+    <div th:replace="common/footer :: footer"></div>
+</footer>
+</body>
+</html>

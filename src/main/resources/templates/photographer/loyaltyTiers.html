@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body th:fragment="content">
+<!-- Hero Section -->
+<div class="hero">
+    <div class="progress-ring">
+        <svg class="progress-circle" width="200" height="200">
+            <circle cx="100" cy="100" r="90" fill="none" stroke="#eee" stroke-width="10"/>
+            <circle cx="100" cy="100" r="90" fill="none" stroke="var(--primary)"
+                    stroke-width="10" stroke-linecap="round"
+                    stroke-dasharray="565.48" stroke-dashoffset="282.74"/>
+        </svg>
+        <div class="level-badge">
+            <h1>Gold Tier</h1>
+            <p>$750 Earned</p>
+        </div>
+    </div>
+    <div class="hero-text">
+        <h2>You're 60% to Platinum!</h2>
+        <p>Keep creating amazing content to unlock exclusive benefits</p>
+    </div>
+</div>
+
+<!-- Tier Cards -->
+<div class="tier-grid">
+    <!-- Bronze Tier -->
+    <div class="tier-card bronze">
+        <div class="tier-icon">
+            <i class="fas fa-medal"></i>
+        </div>
+        <div class="tier-title">Bronze Tier</div>
+        <div class="tier-section">
+            <h3>Requirements</h3>
+            <ul>
+                <li>At least <strong>5 products</strong> listed on the platform</li>
+                <li>Average customer rating of <strong>4.0 stars</strong> or higher</li>
+                <li>Minimum earnings of <strong>$100</strong> from photo sales</li>
+            </ul>
+        </div>
+        <div class="tier-section">
+            <h3>Benefits</h3>
+            <ul>
+                <li><strong>Basic Commission:</strong> Standard commission rate (e.g., 5%)</li>
+                <li><strong>Access to Basic Tools:</strong> Ability to upload and manage products</li>
+                <li><strong>Customer Visibility:</strong> Your photos appear in the general catalog for customers</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Silver Tier -->
+    <div class="tier-card silver">
+        <div class="tier-icon">
+            <i class="fas fa-star"></i>
+        </div>
+        <div class="tier-title">Silver Tier</div>
+        <div class="tier-section">
+            <h3>Requirements</h3>
+            <ul>
+                <li>At least <strong>15 products</strong> listed on the platform</li>
+                <li>Average customer rating of <strong>4.3 stars</strong> or higher</li>
+                <li>Minimum earnings of <strong>$300</strong> from photo sales</li>
+            </ul>
+        </div>
+        <div class="tier-section">
+            <h3>Benefits</h3>
+            <ul>
+                <li><strong>Higher Commission:</strong> Increased commission rate (e.g., 10%)</li>
+                <li><strong>Priority Listing:</strong> Photos get prioritized in search results</li>
+                <li><strong>Exclusive Analytics:</strong> Access to advanced analytics on photo performance</li>
+                <li><strong>Increased Exposure:</strong> Photos can be featured in special promotions</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Gold Tier -->
+    <div class="tier-card gold">
+        <div class="tier-icon">
+            <i class="fas fa-trophy"></i>
+        </div>
+        <div class="tier-title">Gold Tier</div>
+        <div class="tier-section">
+            <h3>Requirements</h3>
+            <ul>
+                <li>At least <strong>30 products</strong> listed on the platform</li>
+                <li>Average customer rating of <strong>4.5 stars</strong> or higher</li>
+                <li>Minimum earnings of <strong>$500</strong> from photo sales</li>
+            </ul>
+        </div>
+        <div class="tier-section">
+            <h3>Benefits</h3>
+            <ul>
+                <li><strong>Premium Commission:</strong> High commission rate (e.g., 15%)</li>
+                <li><strong>Featured Products:</strong> Highlighted in premium sections of the platform</li>
+                <li><strong>Enhanced Marketing:</strong> Promotional assistance (e.g., social media shoutouts)</li>
+                <li><strong>Early Access to Features:</strong> Beta access to new tools and features</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Platinum Tier -->
+    <div class="tier-card platinum">
+        <div class="tier-icon">
+            <i class="fas fa-gem"></i>
+        </div>
+        <div class="tier-title">Platinum Tier</div>
+        <div class="tier-section">
+            <h3>Requirements</h3>
+            <ul>
+                <li>At least <strong>50 products</strong> listed on the platform</li>
+                <li>Average customer rating of <strong>4.7 stars</strong> or higher</li>
+                <li>Minimum earnings of <strong>$1,000</strong> from photo sales</li>
+            </ul>
+        </div>
+        <div class="tier-section">
+            <h3>Benefits</h3>
+            <ul>
+                <li><strong>Top Commission:</strong> Maximum commission rate (e.g., 20%)</li>
+                <li><strong>Premium Exposure:</strong> Exclusive placements on the homepage or featured collections</li>
+                <li><strong>Loyalty Rewards:</strong> VIP services like personalized consultations</li>
+                <li><strong>Custom Marketing Campaigns:</strong> Tailored campaigns for your products</li>
+                <li><strong>Exclusive Partner Offers:</strong> Special deals or collaborations with brands</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Achievement Stats -->
+<div class="stats-grid">
+    <div class="stat">
+        <svg class="stat-circle" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="45" fill="none" stroke="#eee" stroke-width="8"/>
+            <circle cx="50" cy="50" r="45" fill="none" stroke="var(--secondary)"
+                    stroke-width="8" stroke-dasharray="282.74" stroke-dashoffset="70.69"/>
+            <text x="50" y="55" text-anchor="middle" font-size="20">75%</text>
+        </svg>
+        <h4>Products Added</h4>
+    </div>
+    <!-- Add Rating and Earnings stats similarly -->
+</div>
+
+<!-- CTA Section -->
+<div class="cta">
+    <h3>Next Level Requirements:</h3>
+    <ul>
+        <li>Upload <strong>5</strong> more products</li>
+        <li>Achieve <strong>4.5</strong> average rating</li>
+        <li>Earn <strong>$50</strong> more in sales</li>
+    </ul>
+</div>
+</body>
+</html>

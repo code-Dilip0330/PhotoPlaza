@@ -1,0 +1,135 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+
+.childDashboard {
+  width: inherit;
+  margin: 0 auto;
+  display:flex;
+  flex-direction:column;
+}
+
+.overview, .recent-activity, .sales-engagement, .performance-insights, .loyalty-progress, .quick-access, .notifications {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.overview h1 {
+  margin-bottom: 10px;
+}
+
+.level-box {
+  margin-bottom: 20px;
+}
+
+.tier {
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.tier.gold {
+  background-color: #ffd700;
+  color: #000;
+}
+
+.performance-snapshot {
+  display: flex;
+  justify-content: space-between;
+}
+
+.stat {
+  text-align: center;
+  width: 23%;
+}
+
+.recent-activity .activity-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, min-max(300px, 1fr));
+  gap: 20px;
+}
+
+.activity-card {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.charts {
+  display: flex;
+  gap: 20px;
+}
+
+.chart-container {
+  flex: 1;
+}
+
+.download-stats {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.progress-container {
+  margin-bottom: 10px;
+}
+
+.progress-bar {
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  height: 10px;
+  overflow: hidden;
+}
+
+.progress {
+  background-color: #36a2eb;
+  height: 100%;
+}
+
+.tier-criteria {
+  margin-top: 10px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.action-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #36a2eb;
+  color: #fff;
+  cursor: pointer;
+}
+
+.notification-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.notification {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.notification button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #36a2eb;
+  color: #fff;
+  cursor: pointer;
+}

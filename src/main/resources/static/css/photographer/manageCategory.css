@@ -1,0 +1,141 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Header Styles */
+header {
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 24px;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+/* Search and Sort Section */
+.search-sort {
+    display: flex;
+    gap: 17em;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#search {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    min-width:200px;
+    max-width:500px;
+}
+
+.add-photo-btn {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.add-photo-btn:hover {
+    background-color: #1A7B80;
+}
+
+/* Table Container */
+.table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+/* Table Styles */
+#photoTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#photoTable th,
+#photoTable td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#photoTable th {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+}
+
+#photoTable tr:hover {
+    background-color: #f1f1f1;
+}
+
+#photoTable td {
+    font-size: 14px;
+}
+
+/* Action Buttons */
+.edit,
+.delete {
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.edit {
+    background-color: #ffc107;
+    color: #000;
+}
+
+.edit:hover {
+    background-color: #e0a800;
+}
+
+.delete {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.delete:hover {
+    background-color: #c82333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .search-sort {
+        flex-direction: column;
+    }
+
+    #search,
+    #sortBtn,
+    .add-photo-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    #photoTable th,
+    #photoTable td {
+        padding: 8px;
+    }
+}

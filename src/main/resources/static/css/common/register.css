@@ -1,0 +1,195 @@
+:root {
+       --primary-color: #3498db;
+       --secondary-color: #2c3e50;
+       --background-color: #ecf0f1;
+        --text-color: #34495e;
+       --border-color: #bdc3c7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.back-to-login {
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.logo {
+    max-width: 200px;
+}
+
+.register-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+}
+
+h1 {
+    color: var(--secondary-color);
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.subtitle {
+    color: var(--text-color);
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.role-selection {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.role-selection label {
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group p {
+    color:red;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="url"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 16px;
+    color: var(--text-color);
+    transition: border-color 0.3s ease;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.checkbox-group label {
+    flex-basis: 50%;
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+.btn-register {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-register:hover {
+    background-color: #2980b9;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.login-link a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+#photographer-fields {
+    animation: fadeIn 0.5s ease;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    .register-card {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"],
+    input[type="url"],
+    select,
+    .btn-register {
+        font-size: 14px;
+    }
+}
+

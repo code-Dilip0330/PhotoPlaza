@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Details</title>
+    <link rel="stylesheet" th:href="@{css/admin/customer_details.css}">
+</head>
+<body th:fragment="content">
+<h1>Customer Details</h1>
+
+<div class="customer-details">
+    <p><strong>Full Name:</strong> <span th:text="${customer.fullName}"></span></p>
+    <p><strong>Email:</strong> <span th:text="${customer.email}"></span></p>
+    <p><strong>Contact:</strong> <span th:text="${customer.contact}"></span></p>
+    <p><strong>Username:</strong> <span th:text="${customer.username}"></span></p>
+    <p><strong>Role:</strong> <span th:text="${customer.role}"></span></p>
+    <p><strong>Registration Date:</strong> <span th:text="${customer.registrationDate}"></span></p>
+    <p><strong>Last Login Date:</strong> <span th:text="${customer.lastLoginDate}"></span></p>
+    <p><strong>Activities:</strong></p>
+    <ul>
+        <li th:each="activity : ${customer.activities}" th:text="${activity}"></li>
+    </ul>
+</div>
+
+<a class="back-btn" href="/customers">Back to Customer List</a>
+</body>
+</html>

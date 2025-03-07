@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.image{
+    height: 100vh;
+    width: 100%;
+}
+.logout_container{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 500px;
+    position: absolute;
+    top: 100px;
+/*    left: 150px;*/
+    font-family: 'poppins';
+}
+#logout_icon{
+    color: rgba(39, 168, 232, 0.765);
+    font-size: 5rem;
+    margin-bottom: 25px;
+}
+.logout_container #header{
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 20px;
+}
+.logout_container p{
+    font-size: 18px;
+}
+.logout_btn{
+    background-color: rgba(39, 168, 232, 0.765);
+    border: none;
+    border-radius: 15px;
+    padding: 10px 120px;
+    color: whitesmoke;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all .5s ease-in;
+}
+.logout_btn:hover{
+    background-color: rgba(39, 168, 232, 0.338);
+}
+.backLink{
+    text-decoration: none;
+    color: black;
+    font-weight: 400;
+}
+.backLink:hover #text{
+    text-decoration: black underline;
+}
+.redirect_home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 25px;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .logout_container {
+        width: 90%;
+        left: 20px;
+    }
+
+    #logout_icon {
+        font-size: 3rem;
+    }
+
+    .logout_btn {
+        padding: 10px 40px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logout_container {
+        width: 95%;
+        left: 10px;
+        padding: 15px;
+    }
+
+    #logout_icon {
+        font-size: 2.5rem;
+    }
+
+    .logout_btn {
+        padding: 8px 30px;
+        font-size: 0.8rem;
+    }
+}

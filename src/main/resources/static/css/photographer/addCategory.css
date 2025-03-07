@@ -1,0 +1,71 @@
+  .form-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   width: 300px;
+  }
+
+  h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+  }
+
+  input[type="text"],
+  select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+
+  .error-message {
+    color: #ff0000;
+    font-size: 12px;
+    display: none;
+  }
+
+  .form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  .btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  .submit-btn {
+    background-color: #28a745;
+    color: #fff;
+  }
+
+  .submit-btn:hover {
+    background-color: #218838;
+  }
+
+  .cancel-btn {
+    background-color: #dc3545;
+    color: #fff;
+  }
+
+  .cancel-btn:hover {
+    background-color: #c82333;
+  }

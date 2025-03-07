@@ -1,0 +1,35 @@
+body {
+          font-family: Arial, sans-serif;
+          background-color: #f4f4f9;
+          margin: 0;
+          padding: 20px;
+        }
+
+        h1 {
+          color: #333;
+          text-align: center;
+        }
+
+        .customer-details {
+          background-color: #fff;
+          border-radius: 10px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          padding: 20px;
+          max-width: 600px;
+          margin: 0 auto;
+        }
+
+        .customer-details p {
+          margin: 10px 0;
+          color: #555;
+        }
+
+        .customer-details strong {
+          color: #333;
+        }
+
+        .back-btn {
+          display: block;
+          text-align: center;
+          margin-top: 20px;
+        }

@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body th:fragment="content">
+<!--<h1>welcome to setting page</h1>-->
+<div class="dashboard">
+    <!-- Main Content -->
+    <div class="settings-content">
+        <!-- Mobile Navigation -->
+        <select class="mobile-select" onchange="showSection(this.value)" style="display: none;">
+            <option value="profile">Profile Settings</option>
+            <option value="security">Account Security</option>
+            <option value="preferences">UI Preferences</option>
+            <option value="language">Language & Region</option>
+        </select>
+
+        <!-- Desktop Navigation -->
+        <div class="settings-tabs">
+            <button class="tab-button active" onclick="showSection('profile')">Profile</button>
+            <button class="tab-button" onclick="showSection('security')">Security</button>
+            <button class="tab-button" onclick="showSection('preferences')">Preferences</button>
+            <button class="tab-button" onclick="showSection('language')">Language</button>
+        </div>
+
+        <!-- Profile Section -->
+        <section id="profile" class="settings-section active">
+            <div class="profile-preview">
+                <img src="placeholder.jpg" class="profile-picture" alt="Profile"
+                     onclick="document.getElementById('avatarUpload').click()">
+                <div class="profile-upload">
+                    <input type="file" id="avatarUpload" accept="image/*" onchange="previewImage(this)">
+                    <h2>John Photographer</h2>
+                    <p>Photographer since 2018</p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" value="John Photographer">
+            </div>
+
+            <div class="form-group">
+                <label>Portfolio Link</label>
+                <input type="url" value="https://johnphotos.com">
+            </div>
+        </section>
+
+        <!-- Security Section -->
+        <section id="security" class="settings-section">
+            <div class="form-group">
+                <label>Two-Factor Authentication</label>
+                <div class="toggle-switch">
+                    <input type="checkbox" id="2faToggle">
+                    <span class="toggle-slider"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Change Password</label>
+                <input type="password" placeholder="New Password">
+            </div>
+
+            <div class="login-activity">
+                <h3>Recent Logins</h3>
+                <p>New York, US - 2 hours ago</p>
+                <p>London, UK - 3 days ago</p>
+            </div>
+        </section>
+
+        <!-- Preferences Section -->
+        <section id="preferences" class="settings-section">
+            <div class="form-group">
+                <label>Dark Mode</label>
+                <div class="toggle-switch">
+                    <input type="checkbox" id="darkModeToggle" onchange="toggleDarkMode()">
+                    <span class="toggle-slider"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Sidebar Layout</label>
+                <select>
+                    <option>Compact</option>
+                    <option>Expanded</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Language Section -->
+        <section id="language" class="settings-section">
+            <div class="form-group">
+                <label>Language</label>
+                <select>
+                    <option>English</option>
+                    <option>Spanish</option>
+                    <option>French</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Currency Format</label>
+                <select>
+                    <option>USD ($)</option>
+                    <option>EUR (€)</option>
+                    <option>GBP (£)</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Save Bar -->
+        <div class="save-bar">
+            <button class="btn-save">Save Changes</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

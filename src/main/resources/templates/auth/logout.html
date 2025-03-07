@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logout</title>
+  <link rel="stylesheet" th:href="@{/auth/logout.css}">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body th:fragment="content">
+<img class="image" th:src="@{/
+auth/main_image.jpg}" alt="">
+<div class="logout_container">
+  <i class="fa-solid fa-right-from-bracket" id="logout_icon"></i>
+  <p id="header">Are you want to log out?</p>
+  <p>"Great moments are captured here. See you again for more creativity!"</p>
+
+  <!-- Logout Confirmation Form -->
+  <form th:action="@{/logout-action}" method="post"
+        onsubmit="return confirm('Are you sure you want to log out?');">
+    <input type="hidden" name="_csrf" th:value="${_csrf.token}"/> <!-- CSRF protection -->
+    <button type="submit" class="logout_btn">Yes, Logout</button>
+  </form>
+
+  <!-- Cancel: Redirects back to dashboard -->
+  <a th:href="@{/user/dashboard}" class="backLink">
+    <div class="redirect_home">
+      <i class="fa-solid fa-arrow-left"></i>
+      <p id="text">Back to Dashboard</p>
+    </div>
+  </a>
+</div>
+
+</body>
+</html>

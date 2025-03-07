@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Navbar</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" th:href="@{/user/navbar.css}">
+  <script type="text/javascript" th:src="@{/user/navbar.js}" defer></script>
+</head>
+<body th:fragment="navbar">
+<nav class="navbar">
+  <div class="left-section">
+    <div class="logo">PhotoPlaza</div>
+  </div>
+  <div class="right-section">
+    <form th:action="@{/search}" method="get" id="searchForm">
+      <div class="search-container" id="searchContainer"  >
+        <input name="keyword" type="search" class="search-input" id="searchInput" placeholder="Search...">
+        <button class="search-icon" type="button" >
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+    </form>
+<!--    <div class="search-container" id="searchContainer"  >-->
+<!--      <input type="search" class="search-input" placeholder="Search...">-->
+<!--      <button class="search-icon" >-->
+<!--        <i class="fa-solid fa-magnifying-glass"></i>-->
+<!--      </button>-->
+<!--    </div>-->
+    <div class="my-cart">
+      <i class="fa-solid fa-cart-shopping"></i>
+    </div>
+    <div class="profile" id="profile">
+      <div class="profile-content" th:if="${profile.imageBase64 != null}">
+        <img th:src="'data:image/jpeg;base64, ' + ${profile.imageBase64}" class="profile-img" alt="profileImg">
+      </div>
+<!--      <img src="https://via.placeholder.com/50" class="profile-img" alt="Profile">-->
+      <span class="username" th:text="${name.firstName+' '+name.lastName}"></span>
+      <div class="dropdown" id="dropdown">
+        <div class="dropdown-header">
+          <div class="profile-content" th:if="${profile.imageBase64 != null}">
+            <img th:src="'data:image/jpeg;base64, ' + ${profile.imageBase64}" class="profile-img" alt="profileImg">
+          </div>
+<!--          <img src="https://via.placeholder.com/50" class="profile-img" alt="Profile">-->
+          <div>
+            <h4 th:text="${name.firstName+' '+name.lastName}"></h4>
+            <p>Personal Account</p>
+          </div>
+        </div>
+        <div class="dropdown-options">
+          <div class="dropdown-option">
+            <a th:href="@{/user/profileDetails}">Profile</a></div>
+          <div class="dropdown-option">
+            <a th:href="@{/user/switchAccount}">Switch to Business Account</a></div>
+<!--          <div class="dropdown-option">Settings</div>-->
+          <div  class="dropdown-option">
+            <a th:href="@{/logout-page}">Log Out</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Result</title>
+    <!--    missionary-->
+  <link rel="stylesheet" th:href="@{/users/missionary.css}">
+  <script th:src="@{/users/missionary.js}" defer type="text/javascript"></script>
+</head>
+<body>
+<section id="gallery">
+  <!-- Masonry Grid -->
+  <div class="grid">
+    <div th:each="product : ${searchResults}" class="grid-item">
+      <img th:src="'data:image/jpeg;base64,' + ${product.imageBase64}"
+           th:data-title="${product.title}"
+           th:data-description="${product.description}"
+           th:data-price="${product.price}"
+           alt="Product Image" />
+    </div>
+  </div>
+
+  <!-- Modal for Larger Image -->
+  <div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImage" />
+    <div class="modal-details">
+      <h2 id="modalTitle"></h2>
+      <p id="modalDescription"></p>
+      <p id="modalPrice"></p>
+    </div>
+  </div>
+</section>
+</body>
+</html>

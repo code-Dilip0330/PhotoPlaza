@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer List</title>
+</head>
+<body th:fragment="content">
+<h1>Customer List</h1>
+
+<!-- Search and Filter -->
+<div class="search-filter">
+    <input type="text" placeholder="Search by name, email, or username">
+    <select>
+        <option value="all">All</option>
+        <option value="photographer">Photographer</option>
+        <option value="user">User</option>
+        <option value="blocked">Blocked</option>
+        <option value="archived">Archived</option>
+    </select>
+</div>
+
+<!-- Customer Table -->
+<table>
+    <thead>
+    <tr>
+        <th>S.N.</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Contact</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="customer , customerStat : ${customers}">
+        <td th:text="${customerStat.count}"></td>
+        <td th:text="${customer.firstName}"></td>
+        <td th:text="${customer.lastName}"></td>
+        <td th:text="${customer.contact}"></td>
+        <td th:text="${customer.email}"></td>
+        <td th:text="${customer.role}"></td>
+        <td class="action-buttons">
+<!--             Block/Unblock Button -->
+<!--            <button th:if="${customer.role == 'USER'}" class="block-btn" th:onclick="|blockUser(${customer.id})|">Block</button>-->
+<!--            <button th:if="${customer.role == 'BLOCKED'}" class="unblock-btn" th:onclick="|unblockUser(${customer.id})|">Unblock</button>-->
+
+<!--            &lt;!&ndash; Archive Button &ndash;&gt;-->
+<!--            <button th:if="${customer.role != 'ARCHIVED'}" class="archive-btn" th:onclick="|archiveUser(${customer.id})|">Archive</button>-->
+
+<!--            &lt;!&ndash; View Details Button &ndash;&gt;-->
+<!--            <button class="view-details-btn" th:onclick="|viewDetails(${customer.id})|">View Details</button>-->
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<!-- Pagination -->
+<!--<div class="pagination">-->
+<!--    <a th:if="${customers.hasPrevious()}" th:href="@{/customers(page=${customers.number - 1}, size=${customers.size})}">Previous</a>-->
+<!--    <a th:each="i : ${#numbers.sequence(1, customers.totalPages)}"-->
+<!--       th:href="@{/customers(page=${i - 1}, size=${customers.size})}"-->
+<!--       th:class="${i - 1 == customers.number} ? 'active' : ''">-->
+<!--        [[${i}]]-->
+<!--    </a>-->
+<!--    <a th:if="${customers.hasNext()}" th:href="@{/customers(page=${customers.number + 1}, size=${customers.size})}">Next</a>-->
+<!--</div>-->
+</body>
+</html>

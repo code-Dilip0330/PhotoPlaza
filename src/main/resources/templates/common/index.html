@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhotoPlaza</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <script type="text/javascript" th:src="@{/js/script.js}" defer></script>t>
+</head>
+<body>
+<div class="home_page">
+    <header class="navbar">
+        <div class="logo">PhotoPlaza</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">ABOUT US</a></li>
+                <li><a href="#">BLOG</a></li>
+                <li><a href="#">CONTACT US</a></li>
+                <li><a href="#">JOIN</a></li>
+            </ul>
+        </nav>
+        <div class="search-login">
+            <div class="search">
+                <input type="text" class="search-bar" placeholder="Search for pictures...">
+                <button class="btn">Search</button>
+            </div>
+            <button class="btn-login">Profile</button>
+            <button class="btn-signup">Sign Up</button>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="slideshow-container">
+            <!-- Slide 1 -->
+            <div class="mySlides fade">
+                <img th:src="/image/bg/3.jpg" alt="Slide 1">
+            </div>
+            <!-- Slide 2 -->
+            <div class="mySlides fade">
+                <img th:src="/image/bg/4.jpg" alt="Slide 2">
+            </div>
+            <!-- Slide 3 -->
+            <div class="mySlides fade">
+                <img th:src="/image/bg/8.jpg" alt="Slide 3">
+            </div>
+        </div>
+        <h1>Bringing Light to Your Vision.</h1>
+        <p>Explore and sell stunning photographs at PhotoPlaza.</p>
+    </section>
+
+
+    <section id="gallery">
+        <h2>Explore Our Gallery by Categories</h2>
+        <div id="categories">
+            <!-- Category: Nature -->
+            <div class="category">
+                <div class="category-container">
+                    <img th:src="/image/nature&landscapes/1.jpg" alt="Nature 1">
+                    <img th:src="/image/nature&landscapes/10.jpg" alt="Nature 2">
+                    <img th:src="/image/nature&landscapes/2.jpg" alt="Nature 3">
+                    <div class="category-name">
+                        Nature & Landscapes
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category: Wildlife -->
+            <div class="category">
+                <div class="category-container">
+
+                    <img th:src="/image/wild life & animals/1.jpg" alt="Wildlife 1">
+                    <img th:src="/image/wild life & animals/10.jpg" alt="Wildlife 2">
+                    <img th:src="/image/wild life & animals/2.jpg" alt="Wildlife 3">
+                    <div class="category-name">
+                        Wildlife & Animals
+                    </div>
+
+                </div>
+            </div>
+            <!-- Category: Portraits -->
+            <div class="category">
+                <div class="image">
+                    <div class="category-container">
+                        <img th:src="/image/portraits/1.jpg" alt="Portrait 1">
+                        <img th:src="/image/portraits/10.jpg" alt="Portrait 2">
+                        <img th:src="/image/portraits/2.jpg" alt="Portrait 3">
+                        <div class="category-name">
+                            Portraits
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Category: Drone Shots -->
+            <div class="category">
+                <div class="category-container">
+                    <div class="images">
+                        <img th:src="/image/aerial &drone shots/1.jpg" alt="Drone 1">
+                        <img th:src="/image/aerial &drone shots/10.jpg" alt="Drone 2">
+                        <img th:src="/image/aerial &drone shots/2.jpg" alt="Drone 3">
+                        <div class="category-name">
+                            Aerial & Drone Shots
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Category: Historical -->
+            <div class="category">
+                <div class="category-container">
+                    <div class="images">
+                        <img th:src="/image/historical/1.jpg" alt="Historical 1">
+                        <img th:src="/image/historical/10.jpg" alt="Historical 2">
+                        <img th:src="/image/historical/2.jpg" alt="Historical 3">
+                        <div class="category-name">
+                            Historical
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Category: Cultural -->
+            <div class="category">
+                <h3>Cultural</h3>
+                <div class="images">
+                    <img th:src="/image/cultural/1.jpg" alt="Cultural 1">
+                    <img th:src="/image/cultural/10.jpg" alt="Cultural 2">
+                    <img th:src="/image/cultural/2.jpg" alt="Cultural 3">
+                </div>
+            </div>
+            <!-- Category: Seasonal -->
+            <div class="category">
+                <h3>Seasonal</h3>
+                <div class="images">
+                    <img th:src="/image/seasonal/1.jpg" alt="Seasonal 1">
+                    <img th:src="/image/seasonal/10.jpg" alt="Seasonal 2">
+                    <img th:src="/image/seasonal/2.jpg" alt="Seasonal 3">
+                </div>
+            </div>
+            <!-- Category: Macro Photography -->
+            <div class="category">
+                <h3>Macro Photography</h3>
+                <div class="images">
+                    <img th:src="/image/macro photography/1.jpg" alt="Macro 1">
+                    <img th:src="/image/macro photography/10.jpg" alt="Macro 2">
+                    <img th:src="/image/macro photography/2.jpg" alt="Macro 3">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 All Rights Reserved by PhotoPlaza.</p>
+    </footer>
+</div>
+</body>
+</html>

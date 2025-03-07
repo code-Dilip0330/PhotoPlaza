@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div class="navbar" th:fragment="navbar">
+    <div class="user_welcome">
+        <H3>Welcome back,<span th:text="${name.firstName+' '+name.lastName}"></span></H3>
+        <p>Let's let a detailed look at your progress!!!</p>
+    </div>
+    <div class="search_bar">
+        <input type="search" class="search_input" placeholder="search here">
+        <div class="search_button">
+            <i class='bx bx-search-alt' style='color:white'></i></div>
+    </div>
+    <div class="profile-details">
+        <div class="name-job">
+            <div class="profile_name" th:text="${name.firstName+' '+name.lastName}" ></div>
+            <div class="job" th:text="${performance}">Platinum member</div>
+        </div>
+        <div class="profile-content" th:if="${profile.imageBase64 != null}">
+            <img th:src="'data:image/jpeg;base64, ' + ${profile.imageBase64}" alt="profileImg">
+        </div>
+    </div>
+</div>
+</body>
+</html>

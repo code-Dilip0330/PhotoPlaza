@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body th:fragment="content">
+<!-- Navbar -->
+<nav class="notificationNavbar">
+    <div class="notification-bell" onclick="toggleDropdown()">
+        <i class="fas fa-bell"></i>
+        <span class="badge">3</span>
+    </div>
+    <div class="dropdown" id="dropdown">
+        <!-- Dropdown items injected via JS -->
+    </div>
+</nav>
+
+<!-- Notification Page -->
+<div class="container">
+    <div class="actions">
+        <button class="btn" onclick="markAllAsRead()">Mark All as Read</button>
+        <button class="btn" onclick="clearAll()">Clear All</button>
+    </div>
+    <div class="notification-grid" id="notificationGrid">
+        <!-- Notification cards injected via JS -->
+    </div>
+</div>
+</body>
+</html>

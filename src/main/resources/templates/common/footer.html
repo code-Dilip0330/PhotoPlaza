@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{/css/common/footer.css}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+<footer th:fragment="footer">
+    <div class="footer-container">
+        <div class="footer-brand">
+            <h4>PhotoPlaza</h4>
+            <p>Your destination for buying and selling premium photographs.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Featured Links</h4>
+            <ul>
+                <li><a href="#">Portraits</a></li>
+                <li><a href="#">Landscapes</a></li>
+                <li><a href="#">Cultural</a></li>
+                <li><a href="#">Adventure</a></li>
+                <li><a href="#">MacroPhotography</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Legal</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Follow Us</h4>
+            <div class="links">
+                <a href="#"><i class='bx bxl-linkedin' style='color:rgb(255, 255, 255)'  ></i></a>
+                <a href="#"><i class='bx bxl-facebook-circle' style='color:rgb(255, 255, 255)' ></i></a>
+                <a href="#"><i class='bx bxl-twitter' style='color:rgb(255, 255, 255)' ></i></a>
+                <a href="#"><i class='bx bxl-github' style='color:rgb(255, 255, 255)' ></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2025 PhotoPlaza. All rights reserved. | <a href="#">Privacy Policy</a></p>
+    </div>
+</footer>
+</body>
+</html>

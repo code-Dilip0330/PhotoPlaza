@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body th:fragment="content">
+<div class="childDashboard">
+    <!-- Overview Section -->
+    <section class="overview">
+        <h1>Welcome Back, John Doe!</h1>
+        <div class="level-box">
+            <span class="tier gold">Gold Tier</span>
+        </div>
+        <div class="performance-snapshot">
+            <div class="stat">
+                <h2>Total Earnings</h2>
+                <p>$1,200</p>
+            </div>
+            <div class="stat">
+                <h2>Products Sold</h2>
+                <p>75</p>
+            </div>
+            <div class="stat">
+                <h2>Total Views</h2>
+                <p>5,000</p>
+            </div>
+            <div class="stat">
+                <h2>Average Rating</h2>
+                <p>⭐ 4.7</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Activity Section -->
+    <section class="recent-activity">
+        <h2>Recent Activity</h2>
+        <div class="activity-grid">
+            <div class="activity-card">
+                <h3>Recent Sales</h3>
+                <ul>
+                    <li>Wedding Portrait - $50 - 01/28/2025</li>
+                    <li>Landscape Photo - $30 - 01/27/2025</li>
+                </ul>
+            </div>
+            <div class="activity-card">
+                <h3>Recent Reviews</h3>
+                <ul>
+                    <li>John Doe - ⭐⭐⭐⭐⭐: "Amazing shot, love the detail!"</li>
+                    <li>Jane Smith - ⭐⭐⭐⭐: "Great work, highly recommended!"</li>
+                </ul>
+            </div>
+            <div class="activity-card">
+                <h3>New Orders</h3>
+                <ul>
+                    <li>Customer: Alice - Event Photo - 01/29/2025</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sales and Engagement Section -->
+    <section class="sales-engagement">
+        <h2>Sales & Engagement</h2>
+        <div class="charts">
+            <div class="chart-container">
+                <canvas id="salesChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="engagementChart"></canvas>
+            </div>
+        </div>
+        <div class="download-stats">
+            <h3>Total Downloads</h3>
+            <p>1,200</p>
+        </div>
+    </section>
+
+    <!-- Performance Insights Section -->
+    <section class="performance-insights">
+        <h2>Performance Insights</h2>
+        <div class="insights">
+            <p>Your sales have increased by 20% this month!</p>
+            <p>Increase your product offerings in event photography, as it’s your highest-performing category.</p>
+        </div>
+    </section>
+
+    <!-- Loyalty Tiers Progress Section -->
+    <section class="loyalty-progress">
+        <h2>Loyalty Tiers Progress</h2>
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress" style="width: 60%;"></div>
+            </div>
+            <p>You are 60% of the way to Platinum!</p>
+        </div>
+        <div class="tier-criteria">
+            <p>Next Tier: Platinum</p>
+            <p>Criteria: Products: 50+, Rating: 4.7+, Earnings: $1,000+</p>
+        </div>
+    </section>
+
+    <!-- Quick Access Section -->
+    <section class="quick-access">
+        <h2>Quick Access</h2>
+        <div class="action-buttons">
+            <button>Upload New Product</button>
+            <button>View Orders</button>
+            <button>Manage Portfolio</button>
+            <button>Track Earnings</button>
+        </div>
+    </section>
+
+    <!-- Notifications Section -->
+    <section class="notifications">
+        <h2>Notifications</h2>
+        <div class="notification-list">
+            <div class="notification">
+                <p>New customer review on your product!</p>
+                <button>View Details</button>
+            </div>
+            <div class="notification">
+                <p>Your payment has been processed.</p>
+                <button>View Details</button>
+            </div>
+        </div>
+    </section>
+</div>
+</body>
+</html>

@@ -1,0 +1,149 @@
+/* Start Navbar */
+.navbar {
+    height: inherit;
+  /*  width: 100%;*/
+    min-width: calc(100%-270px);
+    max-width: calc(100%-60px);
+    display: flex;
+    flex-wrap: wrap; /* Ensures elements wrap on smaller screens */
+    color: white;
+    justify-content: space-evenly; /* Adjust space between elements */
+    align-items: center;
+    padding: 5px 5px;
+    background-color: black;
+    z-index: 10;
+    transition: all 0.5s ease;
+}
+
+/* User Welcome Section */
+.navbar .user_welcome {
+    flex: 1; /* Takes available space */
+    text-align: left;
+}
+.navbar .user_welcome h3 span {
+    color: var(--primary-color, #ffcc00); /* Add color for emphasis */
+}
+
+/* Search Bar Section */
+.navbar .search_bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    flex: 1;
+}
+.search_input {
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 50px;
+    width: 300px;
+    max-width: 100%; /* Ensure input shrinks on smaller screens */
+}
+.navbar .search_bar .search_button {
+    background-color: transparent;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    border: 1.7px solid white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.search_icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Profile Section */
+.navbar .profile-details {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    justify-content: flex-end;
+    padding-right:1em;
+
+}
+.navbar .profile-details .profile_name {
+    font-size: medium;
+}
+.navbar .profile-details .job {
+    font-size: small;
+    color: #aaa;
+}
+.navbar .profile-details .name-job {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+.profile-content {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+.profile-content img {
+    height: 50px;
+    width: 50px;
+    border: 2px solid white;
+    border-radius: 50%;
+    object-fit: cover; /* Ensures proper scaling of images */
+}
+
+/* Sidebar Adjustment */
+.sidebar.close ~ .navbar {
+    left: 78px;
+    width: calc(100% - 78px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: flex-start; /* Align items to the start */
+        padding: 10px;
+    }
+    .navbar .user_welcome {
+        text-align: center;
+        width: 100%; /* Full-width for smaller screens */
+        margin-bottom: 10px;
+    }
+    .navbar .search_bar {
+        width: 100%;
+        justify-content: flex-start; /* Align left */
+    }
+    .search_input {
+        width: 100%; /* Full width for smaller screens */
+        margin-right: 10px;
+    }
+    .navbar .profile-details {
+        width: 100%; /* Full-width */
+        justify-content: space-between; /* Spread out on smaller screens */
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 5px;
+    }
+    .search_input {
+        font-size: 14px;
+        padding: 8px;
+    }
+    .navbar .profile-details {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    .profile-content {
+        height: 40px;
+        width: 40px;
+    }
+    .profile-content img {
+        height: 40px;
+        width: 40px;
+    }
+}

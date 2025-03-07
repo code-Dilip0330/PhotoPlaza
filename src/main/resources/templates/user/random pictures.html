@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- Random Products Within a Specific Category -->
+<div th:if="${section == 'randomProductsByCategory'}">
+  <h2>Random Products in Category: [[${category}]]</h2>
+  <div th:each="product : ${products}">
+    <img th:src="'data:image/jpeg;base64,' + ${product.imageBase64}" alt="Product Image" />
+    <h3>[[${product.title}]]</h3>
+    <p>[[${product.description}]]</p>
+    <p>Price: [[${product.price}]]</p>
+  </div>
+</div>
+
+<!-- Products Grouped by Category -->
+<div th:if="${section == 'productsByCategory'}">
+  <h2>Products by Category</h2>
+  <div th:each="category : ${productsByCategory.keySet()}">
+    <h3>[[${category}]]</h3>
+    <div th:each="product : ${productsByCategory.get(category)}">
+      <img th:src="'data:image/jpeg;base64,' + ${product.imageBase64}" alt="Product Image" />
+      <h4>[[${product.title}]]</h4>
+      <p>[[${product.description}]]</p>
+      <p>Price: [[${product.price}]]</p>
+    </div>
+  </div>
+</div>
+
+<!-- Random Products Across All Categories -->
+<div th:if="${section == 'randomProducts'}">
+  <h2>Random Products</h2>
+  <div th:each="product : ${products}">
+    <img th:src="'data:image/jpeg;base64,' + ${product.imageBase64}" alt="Product Image" />
+    <h3>[[${product.title}]]</h3>
+    <p>[[${product.description}]]</p>
+    <p>Price: [[${product.price}]]</p>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,325 @@
+/* CSS for PhotoPlaza with Modal Support */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --background-color: #f4f4f4;
+    --text-color: #333;
+    --border-color: #ddd;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--secondary-color);
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--background-color);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--background-color);
+    font-weight: bold;
+}
+
+.search-login {
+    display: flex;
+    gap: 1rem;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar {
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px 0 0 6px;
+}
+
+.btn {
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    font-weight: bold;
+}
+
+.btn-join{
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 7px;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+}
+
+/*.btn-login {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+}
+
+.btn-signup {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+}*/
+#hero {
+    text-align: center;
+    padding: .5rem .5rem;
+    height: 100%;
+    width: 100%;
+    background: url('../html/image/advanture.jpg') no-repeat center/cover;
+    background-size: cover;
+    color: var(--background-color);
+
+}
+
+#hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+#hero p {
+    font-size: 1.2rem;
+     margin-bottom: 2rem;
+}
+.fade img {
+    height: 87vh;
+    width: 100%;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+#gallery .category {
+    padding: 1rem;
+}
+
+.category {
+    margin-bottom: 2rem;
+}
+
+.category .images {
+    display: flex;
+    gap: 1px;
+}
+
+.category .images img {
+    width: 450px;
+    border-radius: 7px;
+    transition: transform 0.3s ease;
+}
+
+.category .images img:hover {
+    transform: scale(1.05);
+}
+
+#products ul {
+    padding: 1rem;
+    list-style: none;
+}
+
+#products ul li {
+    margin-bottom: 0.5rem;
+}
+
+#products ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+#products ul li a:hover {
+    color: var(--primary-color);
+}
+
+.footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: var(--secondary-color);
+    color: var(--background-color);
+}
+
+
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .search-login {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column;
+    }
+    #hero {
+        padding: 2rem 1rem;
+    }
+    #hero h1 {
+        font-size: 2rem;
+    }
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
+.slideshow {
+    position: relative;
+    max-width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.slide {
+    display: none;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    padding: 10px;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    border: none;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+
+
+/* Styling for the category container */
+.category-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+/* Images inside the category */
+.category-container img {
+    width: 33%; /* Each image takes up 1/3 of the container */
+    height: auto;
+    border-radius: 0; /* Remove individual borders for a cleaner look */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* The overlay for the entire category */
+.category-container .category-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Black overlay with transparency */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Hover effect to display the overlay */
+.category-container:hover .category-overlay {
+    opacity: 1; /* Show overlay on hover */
+}
+
+/* Optional hover effect for images */
+.category-container:hover img {
+    transform: scale(1.05); /* Slight zoom-in effect */
+}
+
+
+/* Styling for the category container */
+.category-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+    margin-bottom: 20px; /* Add spacing between categories */
+    border-radius: 8px;
+}
+
+/* Images inside the category */
+.category-container img {
+    width: 33%; /* Each image takes up 1/3 of the container */
+    height: auto;
+    border-radius: 0; /* Remove individual borders for a cleaner look */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* The category name (bar overlay) */
+.category-container .category-name {
+    position: absolute;
+    bottom: 0; /* Stick to the bottom */
+    left: 0;
+    width: 100%; /* Full width */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    color: white;
+    text-align: center;
+    padding: 10px 0; /* Spacing inside the bar */
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    z-index: 2; /* Ensure it stays above images */
+}
+
+/* Optional hover effect for images */
+.category-container:hover img {
+    transform: scale(1.02); /* Slight zoom-in effect */
+}

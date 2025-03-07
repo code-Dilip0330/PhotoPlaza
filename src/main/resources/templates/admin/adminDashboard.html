@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photographer Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <!--    boxicons link-->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+    <!--    navbar links-->
+    <link rel="stylesheet" th:href="@{/css/common/navbar.css}">
+    <!--    sidebar links-->
+    <link rel="stylesheet" th:href="@{/css/common/sidebar.css}">
+    <script type="text/javascript" th:src="@{/js/common/sidebar.js}" defer></script>
+    <!--    footer links-->
+    <link rel="stylesheet" th:href="@{/css/common/footer.css}">
+    <!--    adminDashboard  links-->
+    <link rel="stylesheet" th:href="@{/css/photographer/photographerDashboard.css}">
+    <!--    sidebar.js-->
+    <script type="text/javascript" th:src="@{/js/common/sidebar.js}" defer></script>
+    <!--    Canvas link-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!--    logout.js-->
+<!--    <script type="text/javascript" th:src="@{auth/logout.js}" defer></script>-->
+
+    <link rel="stylesheet" th:href="@{/css/common/logout.css}">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+          integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+<div class="mainDashboard">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div th:replace="common/adminSidebar :: sidebar"></div>
+    </aside>
+
+    <!-- Main Content Wrapper -->
+    <div class="main-wrapper">
+        <!-- Navbar-->
+        <header class="navbar">
+            <div th:replace="common/navbar :: navbar"></div>
+        </header>
+        <main class="main-content">
+            <div th:if="${section == null || section == 'dashboard'}">
+                <div  th:replace="admin/dashboard :: content" ></div>
+                <link rel="stylesheet" th:href="@{/css/photographer/dashboardFile.css}">
+                <script type="text/javascript" th:src="@{/js/photographer/dashboardFile.js}" defer></script>
+            </div>
+            <div th:if="${section == 'manageProduct'}">
+                <div  th:replace="admin/manageProduct :: content" ></div>
+                <link rel="stylesheet" th:href="@{/css/photographer/manageProduct.css}">
+                <!--                <script type="text/javascript" th:src="@{/js/photographer/manageProduct.js}" defer></script>-->
+            </div>
+            <div th:if="${section == 'manageCategory'}">
+                <div  th:replace="admin/manageCategory :: content" ></div>
+                <link rel="stylesheet" th:href="@{/css/photographer/manageCategory.css}">
+<!--                <script type="text/javascript" th:src="@{/js/photographer/manageCategory.js}" defer></script>-->
+            </div>
+            <div th:if="${section == 'manageOrder'}">
+                <div  th:replace="admin/manageOrder :: content" ></div>
+            </div>
+            <div th:if="${section == 'customers'}">
+                <div  th:replace="admin/customer :: content" ></div>
+                <link rel="stylesheet" th:href="@{/css/admin/customer.css}">
+                <script type="text/javascript" th:src="@{/js/admin/customer.js}" defer></script>
+            </div>
+            <div th:if="${section == 'analytics'}">
+                <div  th:replace="common/analytics :: content" ></div>
+                <link rel="stylesheet" th:href="@{/css/common/analytics.css}">
+                <script type="text/javascript" th:src="@{/js/common/analytics.js}" defer></script>
+            </div>
+            <div th:if="${section == 'notification'}">
+                <div  th:replace="common/notification :: content" ></div>
+                <link rel="stylesheet" th:href="@{/css/common/notification.css}">
+                <script type="text/javascript" th:src="@{/js/common/notification.js}" defer></script>
+            </div>
+            <div th:if="${section == 'setting'}">
+                <div  th:replace="common/setting :: content" ></div>
+                <link rel="stylesheet" th:href="@{/css/common/setting.css}">
+                <script type="text/javascript" th:src="@{/js/common/setting.js}" defer></script>
+            </div>
+            <div th:if="${section == 'logout'}">
+                <div  th:replace="admin/logout :: content" ></div>
+            </div>
+<!--            <div th:if="${section == 'logout'}">-->
+<!--                <div  th:replace="common/logout :: content" ></div>-->
+<!--            </div>-->
+
+            <div th:if="${section == 'addCategory'}">
+                <div  th:replace="admin/addCategory :: content" ></div>
+                <link rel="stylesheet" th:href="@{/css/photographer/addCategory.css}">
+<!--                <script type="text/javascript" th:src="@{/js/photographer/addProduct.js}" defer></script>-->
+            </div>
+            <div th:if="${section == 'updateCategory'}">
+                <div  th:replace="admin/updateCategory :: content" ></div>
+                <link rel="stylesheet" th:href="@{/css/photographer/addCategory.css}">
+<!--                <script type="text/javascript" th:src="@{/js/photographer/addProduct.js}" defer></script>-->
+            </div>
+        </main>
+    </div>
+</div>
+<!-- Footer -->
+<footer class="footer">
+    <div th:replace="common/footer :: footer"></div>
+</footer>
+</body>
+</html>

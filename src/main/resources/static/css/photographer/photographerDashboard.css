@@ -1,0 +1,117 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    height: auto;
+
+  }
+
+  /* Dashboard Container */
+  .mainDashboard {
+    height:100vh;
+    display: flex;
+   flex: 1; /* Takes up all remaining vertical space */
+
+  }
+
+  /* Sidebar: Fixed Position */
+  .sidebar {
+    position: sticky; /* Fix the sidebar in place */
+    top: 0;
+    left: 0;
+    height: inherit; /* Full viewport height */
+    width: 250px;
+    color: white;
+    transition: width 300ms ease;
+    overflow: hidden; /* Prevent sidebar scroll */
+  }
+
+  .sidebar.collapsed {
+    width: 60px;
+  }
+
+  /* Sidebar Toggle Button */
+  .sidebar .toggle-btn {
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 10px;
+
+    cursor: pointer;
+  }
+
+  .sidebar .menu {
+    list-style: none;
+    padding: 20px 0;
+  }
+
+  .sidebar .menu li {
+    margin: 20px 0;
+  }
+
+  .sidebar .menu a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+  }
+
+  .sidebar .menu a:hover {
+    background-color: #34495e;
+  }
+
+  /* Main Wrapper: Adjust for Sidebar */
+  .main-wrapper {
+    margin-left: 20px; /* Adjust to match sidebar width */
+    width: calc(100% - 250px);
+    transition: margin-left 0.3s ease, width 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebar.collapsed + .main-wrapper {
+    margin-left: 20px;
+    width: calc(100% - 60px);
+  }
+
+  /* Navbar */
+  .navbar {
+    position:relative;
+    top: 0;
+    /*background-color: #ecf0f1;*/
+/*    padding: 15px;*/
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width:100%;
+    /*min-width: calc(100% - 250px);
+    max-width: calc(100% - 60px);*/
+  }
+
+  /* Main Content: Webkit Scroll Enabled */
+  .main-content {
+    flex: 1; /* Fills the remaining vertical space */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 20px;
+    background-color: #f8f9fa;
+    -webkit-overflow-scrolling: touch; /* Smooth scroll */
+  }
+   .main-content::-webkit-scrollbar {
+         display: none;
+   }
+
+  /* Footer: Full Width */
+  .footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    z-index: 111;
+    padding: 10px 0;
+    width: 100%; /* Full width across the viewport */
+    min-width:350px;
+  }

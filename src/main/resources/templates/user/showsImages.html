@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Photographer Dashboard</title>
+</head>
+<body>
+<h1>Images List</h1>
+<!-- Display Random Products -->
+<h2>Random Products</h2>
+<div th:each="product : ${products}">
+  <img th:src="'data:image/jpeg;base64,' + ${product.imageBase64}" alt="Product Image" style="width: 200px; height: auto;" />
+  <h3>[[${product.title}]]</h3>
+  <p>[[${product.description}]]</p>
+  <p>Price: [[${product.price}]]</p>
+</div>
+<!--<div th:if="${section == 'dashboard'}">-->
+<!--  -->
+<!--</div>-->
+</body>
+</html>

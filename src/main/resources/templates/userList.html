@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body><!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User List</title>
+</head>
+<body>
+<h1>User List</h1>
+<!--<div th:if="${param.success}">-->
+<!--    <div class="alert alert-info" style="">-->
+<!--        You can Successfully register with PhotoPlaza-->
+<!--    </div>-->
+<!--</div>-->
+<table>
+    <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Actions</th>
+    </tr>
+    <tr th:each="user , userStat: ${users}">
+        <td th:text="${userStat.count}"></td>
+        <td th:text="${user.firstName}"></td>
+        <td th:text="${user.lastName}"></td>
+        <td th:text="${user.email}"></td>
+          <td>
+              <a href="#">Active</a>
+              <a href="#">Block</a>
+<!--            <a th:href="@{/items/edit/{id}(id=${item.id})}">Edit</a> |-->
+<!--            <a th:href="@{/items/delete/{id}(id=${item.id})}">Delete</a>-->
+        </td>
+    </tr>
+</table>
+<!--<a href="/items/create">Create New Item</a>-->
+</body>
+</html>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business Account</title>    <link rel="stylesheet" th:href="@{/css/common/register.css}">
+  <link rel="stylesheet" th:href="@{/users/businessAccount.css}">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+<div class="container">
+  <main class="register-card">
+    <h1>Create Your Business Account</h1>
+
+    <form th:action="@{/user/switchAccount}" th:object="${businessAccount}" id="register-form"  method="post" role="form" >
+      <div class="form-group">
+        <label for="businessName">Business/Artist Name</label>
+        <input th:field="*{businessName}" type="text" id="businessName" name="businessName" required>
+      </div>
+
+      <div class="form-group">
+        <label for="websiteUrl" >Website/Portfolio URL</label>
+        <input th:field="*{websiteUrl}"  type="text" id="websiteUrl" name="websiteUrl" required>
+      </div>
+      <!-- Business Type -->
+      <div class="form-group">
+        <label for="businessType">Business Type</label>
+        <select th:field="*{businessType}" id="businessType" name="businessType" required>
+          <option value="" disabled selected>Select your business type</option>
+          <option value="individual">Individual Artist</option>
+          <option value="studio">Photography Studio</option>
+          <option value="agency">Stock Photo Agency</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn-update">Update</button>
+    </form>
+    <!-- Cancel: Redirects back to dashboard -->
+    <a th:href="@{/user/dashboard}" class="backLink">
+      <div class="redirect_home">
+        <i class="fa-solid fa-arrow-left"></i>
+        <p id="text">Back to Dashboard</p>
+      </div>
+    </a>
+  </main>
+</div>
+</body>
+</html>
+

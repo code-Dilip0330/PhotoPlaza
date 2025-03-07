@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Update Photo - Creative Upload Platform</title>
+  <link rel="stylesheet" th:href="@{css/photographer/addProduct.css}">
+  <script th:src="@{js/photographer/addProduct.js}"></script>
+</head>
+<body th:fragment="content">
+<div class="container" >
+  <h1>Update Your Photo</h1>
+  <form id="addPhotoForm"  th:object="${product}"   method="post"  role="form"  th:action="@{/photographer/updateProduct/{id}(id=${product.id})}" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="title">Photo Title</label>
+      <input type="text" id="title" name="title" th:field="*{title}" placeholder="Enter a captivating title"  required>
+      <div class="error" id="photoTitleError"></div>
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea id="description" name="description" th:field="*{description}" placeholder="Describe your photo" rows="4" required></textarea>
+      <div class="error" id="photoDescriptionError"></div>
+    </div>
+    <div class="form-group">
+      <label for="category">Category</label>
+      <select id="category" name="category" th:field="*{category}" required>
+<!--        <option value="">Select a category</option>-->
+        <option th:each="cat : ${categories}" th:value="${cat.categoryName}" th:text="${cat.categoryName}" ></option>
+      </select>
+      <div class="error" id="photoCategoryError"></div>
+    </div>
+    <div class="form-group">
+      <label for="price">Price ($)</label>
+      <input type="number" id="price" name="price" th:field="*{price}" placeholder="Enter price (optional)" min="0" step="0.01">
+    </div>
+    <!-- Display current image if it exists -->
+    <div th:if="${product.imageBase64 != null}">
+      <label>Current Image:</label><br/>
+      <img th:src="'data:image/jpeg;base64,' + ${product.imageBase64}" alt="Current Image" width="100"  /><br/>
+    </div>
+    <!-- Allow user to upload a new image -->
+    <div class="form-group">
+      <label>Upload Photo</label>
+      <div id="imageUpload" class="image-upload">
+        <div class="image-preview" id="imagePreview">
+          <img id="previewImg" src="#" alt="Preview">
+        </div>
+        <p>Drag and drop your photo here or click to select</p>
+        <input type="file" id="photoUpload"  name="image"  style="display: none;">
+      </div>
+      <div class="error" id="photoUploadError"></div>
+    </div>
+    <div class="form-group">
+      <label for="keywords">Keywords/Tags (optional)</label>
+      <div class="tags-input">
+        <input type="text" id="keywords" name="keywords" th:field="*{keywords}" placeholder="Add tags and press Enter">
+      </div>
+    </div>
+    <button type="submit" class="submit-btn">Update Photo</button>
+  </form>
+</div>
+</body>
+</html>

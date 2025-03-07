@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Photos</title>
+    <link rel="stylesheet" th:href="@{css/photographer/manageProduct.css}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+</head>
+<body>
+<div th:fragment="content" class="container">
+    <header>
+        <h1>Manage Category</h1>
+        <div class="search-sort">
+            <input type="text" id="search" placeholder="Search photos...">
+<!--            <button id="sortBtn"><i class="fas fa-sort"></i> Sort</button>-->
+            <a th:href="@{/admin/newCategory}" class="add-photo-btn">
+                <i class="fas fa-plus"></i>
+                <span>Add Category</span>
+            </a>
+        </div>
+    </header>
+    <main>
+        <div class="table-container">
+            <table id="photoTable">
+                <thead>
+                <tr>
+                    <th>S.N</th>
+                    <th>Category Name</th>
+                    <th>status</th>
+                    <th>Created Date</th>
+                    <th colspan="2" style="text-align:center;">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="category, categoryStat : ${categories}">
+                    <td th:text="${categoryStat.count}"></td>
+                    <td th:text="${category.categoryName}"></td>
+                    <td th:text="${category.status}"></td>
+                    <td th:text="${#dates.format(category.createdDate, 'yyyy-MM-dd')}"></td>
+<!--                    Action-->
+                    <td >
+                        <a th:href="@{/admin/edit/{id}(id=${category.id})}" class="edit">Edit</a>
+                    </td>
+                    <td>
+                        <a th:href="@{/admin/delete/{id}(id=${category.id})}"
+                           class="delete"
+                           th:data-confirm-delete="|Are you sure you want to delete '${category.categoryName}'|"
+                           onclick="if(!confirm(this .getAttribute('data-confirm-delete'))) return false"
+                        >Delete</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</div>
+</body>
+</html>

@@ -1,0 +1,199 @@
+:root {
+            --primary: #FFD700;
+            --secondary: #32CD32;
+            --background: #f8f9fa;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+            --bronze: #cd7f32;
+            --silver: #c0c0c0;
+            --gold: #ffd700;
+            --platinum: #e5e4e2;
+        }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: var(--background);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .progress-ring {
+            position: relative;
+            width: 200px;
+            height: 200px;
+        }
+
+        .progress-circle {
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+        }
+
+        .level-badge {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        /* Tier Grid */
+        .tier-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .tier-card {
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .tier-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .tier-card.bronze {
+            border-top: 4px solid var(--bronze);
+        }
+
+        .tier-card.silver {
+            border-top: 4px solid var(--silver);
+        }
+
+        .tier-card.gold {
+            border-top: 4px solid var(--gold);
+        }
+
+        .tier-card.platinum {
+            border-top: 4px solid var(--platinum);
+        }
+
+        .tier-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .tier-card.bronze .tier-icon {
+            color: var(--bronze);
+        }
+
+        .tier-card.silver .tier-icon {
+            color: var(--silver);
+        }
+
+        .tier-card.gold .tier-icon {
+            color: var(--gold);
+        }
+
+        .tier-card.platinum .tier-icon {
+            color: var(--platinum);
+        }
+
+        .tier-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .tier-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .tier-section h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .tier-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .tier-section ul li {
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .tier-section ul li::before {
+            content: "•";
+            color: var(--primary);
+            margin-right: 0.5rem;
+        }
+
+        .tier-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Progress Timeline */
+        .timeline {
+            position: relative;
+            height: 100px;
+            margin: 3rem 0;
+        }
+
+        .milestone {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: white;
+            border-radius: 50%;
+            border: 3px solid var(--text-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .milestone.active {
+            border-color: var(--primary);
+            box-shadow: 0 0 15px var(--primary);
+        }
+
+        /* Achievement Stats */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat-circle {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto;
+        }
+
+        /* Growth Path */
+        .growth-path {
+            background: linear-gradient(to right, #ff9966, #ff5e62);
+            padding: 2rem;
+            border-radius: 1rem;
+            position: relative;
+            height: 150px;
+            margin: 2rem 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .tier-cards {
+                grid-template-columns: 1fr;
+            }
+        }
